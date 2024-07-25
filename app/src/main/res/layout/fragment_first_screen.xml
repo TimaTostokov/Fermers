@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_onboarding_one"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".presentation.onboarding.screens.FirstScreenFragment">
+
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/extrabold"
+        android:gravity="top"
+        android:text="Welcome"
+        android:textColor="#2D6936"
+        android:textSize="54sp" />
+
+    <ImageView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="38dp"
+        android:paddingStart="20dp"
+        android:src="@drawable/go_ahead"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/getStartedButton"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginTop="420dp"
+        android:background="@drawable/shape_background"
+        android:text="Lets get started"
+        android:textColor="@color/colorWhite"
+        android:textSize="16sp" />
+
+</LinearLayout>
