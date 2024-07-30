@@ -8,7 +8,7 @@
 
     <alpha
         android:duration="1500"
-        android:fromAlpha="0"
+        android:fromAlpha="1"
         android:toAlpha="1" />
 
 </set>

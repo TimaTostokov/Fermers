@@ -1,4 +1,4 @@
-package com.fermers_marketplace.fermers.utils.extension
+package com.fermers_marketplace.fermers.utils.ext
 
 import android.view.View
 import androidx.fragment.app.Fragment

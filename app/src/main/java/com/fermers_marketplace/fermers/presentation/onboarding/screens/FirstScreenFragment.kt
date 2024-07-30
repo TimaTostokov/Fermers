@@ -1,13 +1,14 @@
 package com.fermers_marketplace.fermers.presentation.onboarding.screens
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.viewpager2.widget.ViewPager2
 import com.fermers_marketplace.fermers.R
 import com.fermers_marketplace.fermers.databinding.FragmentFirstScreenBinding
-import com.fermers_marketplace.fermers.databinding.FragmentHomeBinding
 
 class FirstScreenFragment : Fragment() {
 
@@ -25,5 +26,10 @@ class FirstScreenFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val viewPager = activity?.findViewById<ViewPager2>(R.id.viewPagerFragment)
+        binding.getStartedButton.setOnClickListener {
+            viewPager?.currentItem = 1
+        }
     }
+
 }

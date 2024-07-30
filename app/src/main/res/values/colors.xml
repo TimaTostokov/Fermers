@@ -15,4 +15,9 @@
     <color name="white_green">#447055</color>
     <color name="blue_green">#88C6A1</color>
     <color name="dark_white">#DDE0DA</color>
+    <color name="buttontext">#50C2C9</color>
+    //indicator color
+    <color name="inactive">#C4C4C4</color>
+    <color name="active">#50C2C9</color>
+    <color name="gray">#a4a4a4</color>
 </resources>

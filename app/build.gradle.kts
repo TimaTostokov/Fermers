@@ -76,6 +76,9 @@ dependencies {
 
     implementation(libs.kotlin.parcelize.runtime)
 
+    implementation (libs.com.google.android.material.material.v110alpha08)
+    implementation (libs.androidx.viewpager2)
+
     implementation(libs.dotsindicator)
 
     implementation(libs.androidx.core.ktx)
