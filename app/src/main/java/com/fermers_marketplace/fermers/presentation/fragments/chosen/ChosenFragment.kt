@@ -25,9 +25,9 @@ class ChosenFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.viewPager.adapter = ChosenViewPagerAdapter(this)
+        binding.viewPagerChosen.adapter = ChosenViewPagerAdapter(this)
         binding.apply {
-            TabLayoutMediator(tabLayout, viewPager) { tab, position ->
+            TabLayoutMediator(tabLayoutChosen, viewPagerChosen) { tab, position ->
                 tab.text = when (position) {
                     0 -> "Куплю"
                     else -> "Продаю"

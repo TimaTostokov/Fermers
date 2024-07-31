@@ -18,7 +18,7 @@ class AdvertAdapter(private val items: List<AdvertModel>) : RecyclerView.Adapter
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_advert, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_advert_chosen, parent, false)
         return ItemViewHolder(view)
     }
 
@@ -29,8 +29,7 @@ class AdvertAdapter(private val items: List<AdvertModel>) : RecyclerView.Adapter
         holder.priceTextView.text = item.price
     }
 
-    override fun getItemCount(): Int {
-        return items.size
-    }
+    override fun getItemCount(): Int = items.size
+
 
 }

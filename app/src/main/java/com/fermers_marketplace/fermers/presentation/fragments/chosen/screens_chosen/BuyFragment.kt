@@ -1,4 +1,4 @@
-package com.fermers_marketplace.fermers.presentation.fragments.chosen.screens
+package com.fermers_marketplace.fermers.presentation.fragments.chosen.screens_chosen
 
 import android.os.Bundle
 import android.view.LayoutInflater
