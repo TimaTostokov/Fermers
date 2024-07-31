@@ -3,27 +3,25 @@ package com.fermers_marketplace.fermers.presentation.activity
 import android.os.Build
 import android.os.Bundle
 import android.view.animation.AnimationUtils
-import android.widget.ImageButton
 import android.widget.LinearLayout
-import android.widget.TextView
+import androidx.activity.viewModels
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.fermers_marketplace.fermers.R
-import com.fermers_marketplace.fermers.data.api.model.ButtonConfig
+import com.fermers_marketplace.fermers.data.model.ButtonConfig
 import com.fermers_marketplace.fermers.databinding.ActivityMainBinding
+import com.fermers_marketplace.fermers.presentation.activity.viewmodel.MainViewModel
 import com.google.android.material.shape.MaterialShapeDrawable
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private var lastSelectedButtonLayout: LinearLayout? = null
-    private var lastSelectedButtonId: Int? = null
-    private var lastSelectedTextId: Int? = null
-    private var lastSelectedIconResId: Int? = null
+    private val viewModel: MainViewModel by viewModels()
 
     private lateinit var navController: NavController
 
@@ -54,22 +52,27 @@ class MainActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener { _, destination, _ ->
             with(binding) {
                 if (!fragmentsWithoutBottomNav.contains(destination.id)) {
-                    bottomAppBar.apply { isVisible = true }
-                    fab.apply { isVisible = true }
+                    bottomAppBar.isVisible = true
+                    fab.isVisible = true
                     supportActionBar?.hide()
                 } else {
-                    bottomAppBar.apply { isVisible = false }
-                    fab.apply { isVisible = false }
+                    bottomAppBar.isVisible = false
+                    fab.isVisible = false
                     supportActionBar?.show()
                 }
             }
         }
 
         buttonConfigs.forEach { config ->
-            setupButtonClickListener(config)
+            val layout = findViewById<LinearLayout>(config.layoutId)
+            layout.setOnClickListener { view ->
+                view.startAnimation(AnimationUtils.loadAnimation(this, R.anim.alpha))
+                viewModel.setupButtonClickListener(this, layout, config, navController)
+            }
         }
 
-        selectInitialButton(buttonConfigs[0])
+        val initialLayout = findViewById<LinearLayout>(buttonConfigs[0].layoutId)
+        viewModel.selectInitialButton(this, initialLayout, buttonConfigs[0])
     }
 
     private fun setupBottomAppBarCornerRadius() {
@@ -81,51 +84,9 @@ class MainActivity : AppCompatActivity() {
                 .build()
     }
 
-    private fun setupButtonClickListener(config: ButtonConfig) {
-        findViewById<LinearLayout>(config.layoutId).setOnClickListener {
-            it.startAnimation(AnimationUtils.loadAnimation(this, R.anim.alpha))
-            resetLastSelectedButton()
-            lastSelectedIconResId = config.defaultIconResId
-            changeButtonIconAndTextColor(config.buttonId, config.textId, config.newIconResId)
-            lastSelectedButtonLayout = findViewById(config.layoutId)
-            lastSelectedButtonId = config.buttonId
-            lastSelectedTextId = config.textId
-            navController.navigate(config.fragmentId)
-        }
-    }
-
-    private fun selectInitialButton(config: ButtonConfig) {
-        changeButtonIconAndTextColor(config.buttonId, config.textId, config.newIconResId)
-        lastSelectedButtonLayout = findViewById(config.layoutId)
-        lastSelectedButtonId = config.buttonId
-        lastSelectedTextId = config.textId
-        lastSelectedIconResId = config.defaultIconResId
-    }
-
-    private fun resetLastSelectedButton() {
-        lastSelectedButtonLayout.let {
-            findViewById<ImageButton>(lastSelectedButtonId!!).setImageDrawable(
-                ContextCompat.getDrawable(this, lastSelectedIconResId!!)
-            )
-            findViewById<TextView>(lastSelectedTextId!!).setTextColor(
-                ContextCompat.getColor(this, R.color.gray)
-            )
-        }
-    }
-
-    private fun changeButtonIconAndTextColor(buttonId: Int, textId: Int, newIconResId: Int) {
-        findViewById<ImageButton>(buttonId).setImageDrawable(
-            ContextCompat.getDrawable(this, newIconResId)
-        )
-        findViewById<TextView>(textId).setTextColor(
-            ContextCompat.getColor(this, R.color.colorWhite)
-        )
-    }
-
     override fun onDestroy() {
         super.onDestroy()
         navController.removeOnDestinationChangedListener { _, _, _ -> }
-        lastSelectedButtonLayout = null
     }
 
 }
