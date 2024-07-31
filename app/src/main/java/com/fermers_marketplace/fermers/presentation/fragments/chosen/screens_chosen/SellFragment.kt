@@ -27,10 +27,29 @@ class SellFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val items = listOf(
-            AdvertModel(R.mipmap.ic_launcher, "Описание 1", "Цена 1"),
-            AdvertModel(R.mipmap.ic_launcher, "Описание 2", "Цена 2"),
-            AdvertModel(R.mipmap.ic_launcher, "Описание 3", "Цена 3")
+            AdvertModel(R.drawable.cow, "Куплю корову", "Цена 80тыс"),
+            AdvertModel(R.drawable.ram, "Куплю барана", "Цена 50тыс"),
+            AdvertModel(R.drawable.horse, "Куплю лошадь", "Цена 120тыс"),
+            AdvertModel(R.drawable.cow, "Куплю корову", "Цена 80тыс"),
+            AdvertModel(R.drawable.ram, "Куплю барана", "Цена 50тыс"),
+            AdvertModel(R.drawable.horse, "Куплю лошадь", "Цена 120тыс"),
+            AdvertModel(R.drawable.cow, "Куплю корову", "Цена 80тыс"),
+            AdvertModel(R.drawable.ram, "Куплю барана", "Цена 50тыс"),
+            AdvertModel(R.drawable.horse, "Куплю лошадь", "Цена 120тыс"),
+            AdvertModel(R.drawable.cow, "Куплю корову", "Цена 80тыс"),
+            AdvertModel(R.drawable.ram, "Куплю барана", "Цена 50тыс"),
+            AdvertModel(R.drawable.horse, "Куплю лошадь", "Цена 120тыс"),
+            AdvertModel(R.drawable.cow, "Куплю корову", "Цена 80тыс"),
+            AdvertModel(R.drawable.ram, "Куплю барана", "Цена 50тыс"),
+            AdvertModel(R.drawable.horse, "Куплю лошадь", "Цена 120тыс"),
+            AdvertModel(R.drawable.cow, "Куплю корову", "Цена 80тыс"),
+            AdvertModel(R.drawable.ram, "Куплю барана", "Цена 50тыс"),
+            AdvertModel(R.drawable.horse, "Куплю лошадь", "Цена 120тыс"),
+            AdvertModel(R.drawable.cow, "Куплю корову", "Цена 80тыс"),
+            AdvertModel(R.drawable.ram, "Куплю барана", "Цена 50тыс"),
+            AdvertModel(R.drawable.horse, "Куплю лошадь", "Цена 120тыс"),
         )
+
 
         val adapter = AdvertAdapter(items)
         binding.rvBuy.adapter = adapter
