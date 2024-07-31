@@ -1,4 +1,4 @@
-package com.fermers_marketplace.fermers.data.api.model
+package com.fermers_marketplace.fermers.data.model
 
 data class AdvertModel(
     val imageResource: Int,
