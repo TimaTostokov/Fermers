@@ -67,9 +67,10 @@
         android:background="@drawable/shape_background"
         android:fontFamily="@font/extrabold"
         android:text="Finish"
-        app:layout_constraintStart_toStartOf="parent"
         android:textColor="@color/colorWhite"
+        app:layout_goneMarginEnd="5dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

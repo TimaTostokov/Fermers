@@ -20,13 +20,14 @@
         android:textColor="#2D6936"
         android:textSize="54sp" />
 
-    <ImageView
+    <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="38dp"
         android:paddingStart="20dp"
         android:src="@drawable/go_ahead"
+        android:text="Свежие продукты от проверенных фермеров"
         android:textSize="24sp"
         android:textStyle="bold"
         tools:ignore="RtlSymmetry" />
