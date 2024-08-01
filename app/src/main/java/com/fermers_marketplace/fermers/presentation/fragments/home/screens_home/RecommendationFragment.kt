@@ -1,4 +1,4 @@
-package com.fermers_marketplace.fermers.presentation.fragments.chosen.screens
+package com.fermers_marketplace.fermers.presentation.fragments.home.screens_home
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,19 +8,20 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import com.fermers_marketplace.fermers.R
 import com.fermers_marketplace.fermers.data.model.AdvertModel
+import com.fermers_marketplace.fermers.databinding.FragmentRecommendationBinding
 import com.fermers_marketplace.fermers.databinding.FragmentSellBinding
 import com.fermers_marketplace.fermers.presentation.fragments.chosen.adapter.AdvertAdapter
 
-class SellFragment : Fragment() {
+class RecommendationFragment : Fragment() {
 
-    private var _binding: FragmentSellBinding? = null
+    private var _binding: FragmentRecommendationBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentSellBinding.inflate(inflater, container, false)
+        _binding =  FragmentRecommendationBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -53,8 +54,8 @@ class SellFragment : Fragment() {
         )
 
         val adapter = AdvertAdapter(items)
-        binding.rvSell.layoutManager = GridLayoutManager(requireContext(), 2)
-        binding.rvSell.adapter = adapter
+        binding.rvBuyHome.layoutManager = GridLayoutManager(requireContext(), 2)
+        binding.rvBuyHome.adapter = adapter
 
     }
 

@@ -2,8 +2,8 @@ package com.fermers_marketplace.fermers.presentation.fragments.chosen.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.fermers_marketplace.fermers.presentation.fragments.chosen.screens.BuyFragment
-import com.fermers_marketplace.fermers.presentation.fragments.chosen.screens.SellFragment
+import com.fermers_marketplace.fermers.presentation.fragments.chosen.screens_chosen.BuyFragment
+import com.fermers_marketplace.fermers.presentation.fragments.chosen.screens_chosen.SellFragment
 
 class ChosenViewPagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
 

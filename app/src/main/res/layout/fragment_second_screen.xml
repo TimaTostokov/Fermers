@@ -1,34 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E7E8E3"
+    android:background="@drawable/onboard_three"
+    android:orientation="vertical"
+    android:gravity="center"
     tools:context=".presentation.onboarding.screens.SecondScreenFragment">
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="400dp"
-        android:layout_height="400dp"
-        android:layout_marginTop="11dp"
-        android:src="@drawable/background_onboarding_two"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
         android:text="Удобный поиск и покупка"
         android:textColor="@color/white_green"
         android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/textView2"
@@ -40,21 +27,19 @@
         android:textColor="@color/white_green"
         android:fontFamily="@font/poppins_medium"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        android:layout_gravity="center"
+        android:textAlignment="center" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_second_screen"
         android:layout_width="140dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginTop="268dp"
         android:textColor="@color/colorWhite"
         android:fontFamily="@font/extrabold"
-        android:layout_marginBottom="16dp"
         android:background="@drawable/shape_background"
         android:text="Continue"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:layout_gravity="end" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

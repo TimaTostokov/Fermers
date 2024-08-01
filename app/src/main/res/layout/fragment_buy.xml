@@ -4,13 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".presentation.fragments.chosen.screens.BuyFragment">
+    tools:context=".presentation.fragments.chosen.screens_chosen.BuyFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_buy"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/item_advert" />
+        tools:listitem="@layout/item_advert_chosen" />
 
 </LinearLayout>

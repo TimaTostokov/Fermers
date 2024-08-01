@@ -4,13 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".presentation.fragments.chosen.screens_chosen.SellFragment">
+    tools:context=".presentation.fragments.home.screens_home.RecommendationFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_sell"
+        android:id="@+id/rv_buy_home"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/item_advert_chosen" />
+        tools:listitem="@layout/item_advert_home" />
 
 </LinearLayout>

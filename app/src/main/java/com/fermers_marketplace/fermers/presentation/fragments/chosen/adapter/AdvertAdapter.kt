@@ -5,14 +5,14 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.fermers_marketplace.fermers.R
 import com.fermers_marketplace.fermers.data.model.AdvertModel
-import com.fermers_marketplace.fermers.databinding.ItemAdvertBinding
+import com.fermers_marketplace.fermers.databinding.ItemAdvertChosenBinding
 
 class AdvertAdapter(
-    private val items: MutableList<AdvertModel>
+    private val items: List<AdvertModel>
 ) : RecyclerView.Adapter<AdvertAdapter.AdvertViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AdvertViewHolder {
-        val binding = ItemAdvertBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = ItemAdvertChosenBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return AdvertViewHolder(binding)
     }
 
@@ -21,11 +21,10 @@ class AdvertAdapter(
         holder.bind(item)
     }
 
-    override fun getItemCount(): Int {
-        return items.size
-    }
+    override fun getItemCount(): Int = items.size
 
-    inner class AdvertViewHolder(private val binding: ItemAdvertBinding) : RecyclerView.ViewHolder(binding.root) {
+
+    inner class AdvertViewHolder(private val binding: ItemAdvertChosenBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: AdvertModel) {
             binding.apply {
                 tvPrice.text = item.price
