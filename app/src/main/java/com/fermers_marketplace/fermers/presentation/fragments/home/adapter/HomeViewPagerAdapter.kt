@@ -1,11 +1,13 @@
-package com.fermers_marketplace.fermers.presentation.fragments.chosen.adapter
+package com.fermers_marketplace.fermers.presentation.fragments.home.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.fermers_marketplace.fermers.presentation.fragments.chosen.screens_chosen.BuyFragment
 import com.fermers_marketplace.fermers.presentation.fragments.chosen.screens_chosen.SellFragment
+import com.fermers_marketplace.fermers.presentation.fragments.home.screens_home.FollowersFragment
+import com.fermers_marketplace.fermers.presentation.fragments.home.screens_home.RecommendationFragment
 
-class ChosenViewPagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
+class HomeViewPagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
 
     override fun getItemCount(): Int {
         return 2
@@ -13,8 +15,8 @@ class ChosenViewPagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment
 
     override fun createFragment(position: Int): Fragment {
         return when (position) {
-            0 -> BuyFragment()
-            else -> SellFragment()
+            0 -> FollowersFragment()
+            else -> RecommendationFragment()
         }
     }
 
