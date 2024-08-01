@@ -7,6 +7,7 @@ import android.widget.LinearLayout
 import androidx.activity.viewModels
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.view.isVisible
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -14,6 +15,9 @@ import com.fermers_marketplace.fermers.R
 import com.fermers_marketplace.fermers.data.model.ButtonConfig
 import com.fermers_marketplace.fermers.databinding.ActivityMainBinding
 import com.fermers_marketplace.fermers.presentation.activity.viewmodel.MainViewModel
+import com.google.android.material.behavior.HideBottomViewOnScrollBehavior
+import com.google.android.material.bottomappbar.BottomAppBar
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.shape.MaterialShapeDrawable
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -73,6 +77,7 @@ class MainActivity : AppCompatActivity() {
 
         val initialLayout = findViewById<LinearLayout>(buttonConfigs[0].layoutId)
         viewModel.selectInitialButton(this, initialLayout, buttonConfigs[0])
+
     }
 
     private fun setupBottomAppBarCornerRadius() {
@@ -82,6 +87,14 @@ class MainActivity : AppCompatActivity() {
             bottomBarBackground.shapeAppearanceModel.toBuilder()
                 .setAllCornerSizes(radius)
                 .build()
+
+        val bottomNavigationParams = binding.bottomAppBar.layoutParams as CoordinatorLayout.LayoutParams
+        bottomNavigationParams.behavior = HideBottomViewOnScrollBehavior<BottomAppBar>()
+        binding.bottomAppBar.layoutParams = bottomNavigationParams
+
+        binding.bottomAppBar.fabCradleMargin = 10f // Используйте dp в коде, если не используете ресурсы
+        binding.bottomAppBar.fabCradleRoundedCornerRadius = 2f
+
     }
 
     override fun onDestroy() {

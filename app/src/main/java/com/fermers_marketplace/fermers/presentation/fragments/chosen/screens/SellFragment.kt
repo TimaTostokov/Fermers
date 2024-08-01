@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
 import com.fermers_marketplace.fermers.R
 import com.fermers_marketplace.fermers.data.model.AdvertModel
 import com.fermers_marketplace.fermers.databinding.FragmentSellBinding
@@ -26,7 +27,7 @@ class SellFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val items = listOf(
+        val items = mutableListOf(
             AdvertModel(R.drawable.horse, "Продаю лошадь", "Цена 120тыс"),
             AdvertModel(R.drawable.cow, "Продаю корову", "Цена 80тыс"),
             AdvertModel(R.drawable.ram, "Продаю барана", "Цена 50тыс"),
@@ -52,7 +53,8 @@ class SellFragment : Fragment() {
         )
 
         val adapter = AdvertAdapter(items)
-        binding.rvBuy.adapter = adapter
+        binding.rvSell.layoutManager = GridLayoutManager(requireContext(), 2)
+        binding.rvSell.adapter = adapter
 
     }
 

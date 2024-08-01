@@ -1,36 +1,51 @@
 package com.fermers_marketplace.fermers.presentation.fragments.chosen.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.fermers_marketplace.fermers.R
 import com.fermers_marketplace.fermers.data.model.AdvertModel
+import com.fermers_marketplace.fermers.databinding.ItemAdvertBinding
 
-class AdvertAdapter(private val items: List<AdvertModel>) : RecyclerView.Adapter<AdvertAdapter.ItemViewHolder>() {
+class AdvertAdapter(
+    private val items: MutableList<AdvertModel>
+) : RecyclerView.Adapter<AdvertAdapter.AdvertViewHolder>() {
 
-    class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val imageView: ImageView = itemView.findViewById(R.id.iv_item)
-        val descriptionTextView: TextView = itemView.findViewById(R.id.tv_description)
-        val priceTextView: TextView = itemView.findViewById(R.id.tv_price)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AdvertViewHolder {
+        val binding = ItemAdvertBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return AdvertViewHolder(binding)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_advert, parent, false)
-        return ItemViewHolder(view)
-    }
-
-    override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: AdvertViewHolder, position: Int) {
         val item = items[position]
-        holder.imageView.setImageResource(item.imageResource)
-        holder.descriptionTextView.text = item.description
-        holder.priceTextView.text = item.price
+        holder.bind(item)
     }
 
     override fun getItemCount(): Int {
         return items.size
     }
 
+    inner class AdvertViewHolder(private val binding: ItemAdvertBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(item: AdvertModel) {
+            binding.apply {
+                tvPrice.text = item.price
+                tvDescription.text = item.description
+                ivItem.setImageResource(item.imageResource)
+
+                updateFavoriteIcon(item.isFavorite)
+
+                btnFavorite.setOnClickListener {
+                    item.isFavorite = !item.isFavorite
+                    updateFavoriteIcon(item.isFavorite)
+                }
+            }
+        }
+
+        private fun updateFavoriteIcon(isFavorite: Boolean) {
+            binding.btnFavorite.setImageResource(
+                if (isFavorite) R.drawable.baseline_favorite_24
+                else R.drawable.baseline_favorite_border_24
+            )
+        }
+    }
 }
