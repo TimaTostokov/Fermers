@@ -1,15 +1,13 @@
 package com.fermers_marketplace.fermers.presentation.fragments.home.screens_home
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.fermers_marketplace.fermers.R
-import com.fermers_marketplace.fermers.data.api.model.AdvertModel
-import com.fermers_marketplace.fermers.databinding.FragmentBuyBinding
+import com.fermers_marketplace.fermers.data.model.AdvertModel
 import com.fermers_marketplace.fermers.databinding.FragmentFollowersBinding
-import com.fermers_marketplace.fermers.presentation.fragments.chosen.adapter.AdvertAdapter
 import com.fermers_marketplace.fermers.presentation.fragments.home.adapter.AdvertHomeAdapter
 
 class FollowersFragment : Fragment() {

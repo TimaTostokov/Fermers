@@ -7,7 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.fermers_marketplace.fermers.R
-import com.fermers_marketplace.fermers.data.api.model.AdvertModel
+import com.fermers_marketplace.fermers.data.model.AdvertModel
 
 class AdvertHomeAdapter(private val items: List<AdvertModel>) : RecyclerView.Adapter<AdvertHomeAdapter.ItemViewHolder>() {
 

@@ -7,7 +7,7 @@
     tools:context=".presentation.fragments.chosen.screens_chosen.SellFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_buy"
+        android:id="@+id/rv_sell"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"

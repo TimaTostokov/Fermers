@@ -52,7 +52,7 @@ class SellFragment : Fragment() {
 
 
         val adapter = AdvertAdapter(items)
-        binding.rvBuy.adapter = adapter
+        binding.rvSell.adapter = adapter
 
     }
 
