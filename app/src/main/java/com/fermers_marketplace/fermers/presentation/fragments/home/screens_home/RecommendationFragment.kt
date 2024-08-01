@@ -1,4 +1,4 @@
-package com.fermers_marketplace.fermers.presentation.fragments.home.screens_home
+package com.fermers_marketplace.fermers.presentation.fragments.chosen.screens
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,21 +6,20 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.fermers_marketplace.fermers.R
-import com.fermers_marketplace.fermers.data.api.model.AdvertModel
-import com.fermers_marketplace.fermers.databinding.FragmentRecommendationBinding
+import com.fermers_marketplace.fermers.data.model.AdvertModel
+import com.fermers_marketplace.fermers.databinding.FragmentSellBinding
 import com.fermers_marketplace.fermers.presentation.fragments.chosen.adapter.AdvertAdapter
-import com.fermers_marketplace.fermers.presentation.fragments.home.adapter.AdvertHomeAdapter
 
-class RecommendationFragment : Fragment() {
+class SellFragment : Fragment() {
 
-    private var _binding: FragmentRecommendationBinding? = null
+    private var _binding: FragmentSellBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentRecommendationBinding.inflate(inflater, container, false)
+        _binding = FragmentSellBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -28,13 +27,32 @@ class RecommendationFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val items = listOf(
-            AdvertModel(R.mipmap.ic_launcher, "fer", "Цена 1"),
-            AdvertModel(R.drawable.pattern_image, "Описание 2", "Цена 2"),
-            AdvertModel(R.mipmap.ic_launcher, "Описание 3", "Цена 33dollar")
+            AdvertModel(R.drawable.horse, "Продаю лошадь", "Цена 120тыс"),
+            AdvertModel(R.drawable.cow, "Продаю корову", "Цена 80тыс"),
+            AdvertModel(R.drawable.ram, "Продаю барана", "Цена 50тыс"),
+            AdvertModel(R.drawable.horse, "Продаю лошадь", "Цена 120тыс"),
+            AdvertModel(R.drawable.cow, "Продаю корову", "Цена 80тыс"),
+            AdvertModel(R.drawable.ram, "Продаю барана", "Цена 50тыс"),
+            AdvertModel(R.drawable.horse, "Продаю лошадь", "Цена 120тыс"),
+            AdvertModel(R.drawable.cow, "Продаю корову", "Цена 80тыс"),
+            AdvertModel(R.drawable.ram, "Продаю барана", "Цена 50тыс"),
+            AdvertModel(R.drawable.horse, "Продаю лошадь", "Цена 120тыс"),
+            AdvertModel(R.drawable.cow, "Продаю корову", "Цена 80тыс"),
+            AdvertModel(R.drawable.ram, "Продаю барана", "Цена 50тыс"),
+            AdvertModel(R.drawable.horse, "Продаю лошадь", "Цена 120тыс"),
+            AdvertModel(R.drawable.cow, "Продаю корову", "Цена 80тыс"),
+            AdvertModel(R.drawable.ram, "Продаю барана", "Цена 50тыс"),
+            AdvertModel(R.drawable.horse, "Продаю лошадь", "Цена 120тыс"),
+            AdvertModel(R.drawable.cow, "Продаю корову", "Цена 80тыс"),
+            AdvertModel(R.drawable.ram, "Продаю барана", "Цена 50тыс"),
+            AdvertModel(R.drawable.horse, "Продаю лошадь", "Цена 120тыс"),
+            AdvertModel(R.drawable.cow, "Продаю корову", "Цена 80тыс"),
+            AdvertModel(R.drawable.ram, "Продаю барана", "Цена 50тыс"),
+
         )
 
-        val adapter = AdvertHomeAdapter(items)
-        binding.rvBuyHome.adapter = adapter
+        val adapter = AdvertAdapter(items)
+        binding.rvBuy.adapter = adapter
 
     }
 
