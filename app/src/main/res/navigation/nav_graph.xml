@@ -20,7 +20,7 @@
         <action
             android:id="@+id/action_splashFragment_to_viewPagerFragment"
             app:destination="@id/viewPagerFragment"
-            app:enterAnim="@anim/from_left"
+            app:enterAnim="@anim/from_right"
             app:popUpTo="@id/splashFragment"
             app:popUpToInclusive="true" />
 

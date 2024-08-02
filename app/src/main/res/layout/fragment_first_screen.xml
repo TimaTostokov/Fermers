@@ -17,7 +17,7 @@
         android:fontFamily="@font/extrabold"
         android:gravity="top"
         android:text="Welcome"
-        android:textColor="@color/colorOrange"
+        android:textColor="@color/colorWhite"
         android:textSize="54sp" />
 
     <TextView
@@ -28,7 +28,7 @@
         android:fontFamily="@font/poppins_medium"
         android:paddingStart="20dp"
         android:text="Свежие продукты от проверенных фермеров"
-        android:textColor="@color/colorOrange"
+        android:textColor="@color/colorWhite"
         android:textSize="24sp"
         tools:ignore="RtlSymmetry" />
 
