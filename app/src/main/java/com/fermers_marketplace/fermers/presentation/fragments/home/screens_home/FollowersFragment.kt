@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
 import com.fermers_marketplace.fermers.R
 import com.fermers_marketplace.fermers.data.model.AdvertModel
 import com.fermers_marketplace.fermers.databinding.FragmentFollowersBinding
@@ -22,6 +23,7 @@ class FollowersFragment : Fragment() {
         _binding = FragmentFollowersBinding.inflate(inflater, container, false)
         return binding.root
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -33,6 +35,9 @@ class FollowersFragment : Fragment() {
 
         val adapter = AdvertHomeAdapter(items)
         binding.rvBuyHome.adapter = adapter
+        binding.rvBuyHome.layoutManager = GridLayoutManager(requireContext(), 2)
+        binding.rvBuyHome.adapter = adapter
+
     }
 
 }

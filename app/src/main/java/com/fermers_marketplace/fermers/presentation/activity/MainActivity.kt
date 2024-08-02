@@ -17,7 +17,6 @@ import com.fermers_marketplace.fermers.databinding.ActivityMainBinding
 import com.fermers_marketplace.fermers.presentation.activity.viewmodel.MainViewModel
 import com.google.android.material.behavior.HideBottomViewOnScrollBehavior
 import com.google.android.material.bottomappbar.BottomAppBar
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.shape.MaterialShapeDrawable
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -30,10 +29,38 @@ class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
 
     private val buttonConfigs = listOf(
-        ButtonConfig(R.id.home_button_layout, R.id.home_ib, R.id.home_tv, R.drawable.home, R.drawable.home_selector_vectors, R.id.homeFragment),
-        ButtonConfig(R.id.catalog_button_layout, R.id.catalog_ib, R.id.catalog_tv, R.drawable.ic_catalog, R.drawable.ic_catalog_vector, R.id.catalogFragment),
-        ButtonConfig(R.id.chosen_button_layout, R.id.chosen_ib, R.id.chosen_tv, R.drawable.chosen, R.drawable.chosen_selector_vectors, R.id.chosenFragment),
-        ButtonConfig(R.id.profile_button_layout, R.id.profile_ib, R.id.profile_tv, R.drawable.profile, R.drawable.profile_selector_vectors, R.id.profileFragment)
+        ButtonConfig(
+            R.id.home_button_layout,
+            R.id.home_ib,
+            R.id.home_tv,
+            R.drawable.home,
+            R.drawable.home_selector_vectors,
+            R.id.homeFragment
+        ),
+        ButtonConfig(
+            R.id.catalog_button_layout,
+            R.id.catalog_ib,
+            R.id.catalog_tv,
+            R.drawable.ic_catalog,
+            R.drawable.ic_catalog_vector,
+            R.id.catalogFragment
+        ),
+        ButtonConfig(
+            R.id.chosen_button_layout,
+            R.id.chosen_ib,
+            R.id.chosen_tv,
+            R.drawable.chosen,
+            R.drawable.chosen_selector_vectors,
+            R.id.chosenFragment
+        ),
+        ButtonConfig(
+            R.id.profile_button_layout,
+            R.id.profile_ib,
+            R.id.profile_tv,
+            R.drawable.profile,
+            R.drawable.profile_selector_vectors,
+            R.id.profileFragment
+        )
     )
 
     @RequiresApi(Build.VERSION_CODES.M)
@@ -58,10 +85,12 @@ class MainActivity : AppCompatActivity() {
                 if (!fragmentsWithoutBottomNav.contains(destination.id)) {
                     bottomAppBar.isVisible = true
                     fab.isVisible = true
+                    upBtn.isVisible = true
                     supportActionBar?.hide()
                 } else {
                     bottomAppBar.isVisible = false
                     fab.isVisible = false
+                    upBtn.isVisible = false
                     supportActionBar?.show()
                 }
             }
@@ -88,11 +117,12 @@ class MainActivity : AppCompatActivity() {
                 .setAllCornerSizes(radius)
                 .build()
 
-        val bottomNavigationParams = binding.bottomAppBar.layoutParams as CoordinatorLayout.LayoutParams
+        val bottomNavigationParams =
+            binding.bottomAppBar.layoutParams as CoordinatorLayout.LayoutParams
         bottomNavigationParams.behavior = HideBottomViewOnScrollBehavior<BottomAppBar>()
         binding.bottomAppBar.layoutParams = bottomNavigationParams
 
-        binding.bottomAppBar.fabCradleMargin = 10f // Используйте dp в коде, если не используете ресурсы
+        binding.bottomAppBar.fabCradleMargin = 10f
         binding.bottomAppBar.fabCradleRoundedCornerRadius = 2f
 
     }

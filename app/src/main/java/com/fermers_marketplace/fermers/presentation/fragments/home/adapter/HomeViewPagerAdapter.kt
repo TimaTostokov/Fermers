@@ -13,8 +13,8 @@ class HomeViewPagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) 
 
     override fun createFragment(position: Int): Fragment {
         return when (position) {
-            0 -> FollowersFragment()
-            else -> RecommendationFragment()
+            0 -> RecommendationFragment()
+            else -> FollowersFragment()
         }
     }
 

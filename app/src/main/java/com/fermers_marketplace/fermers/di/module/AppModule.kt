@@ -37,4 +37,5 @@ object AppModule {
     fun provideChangeButtonIconAndTextColorUseCase(): ChangeButtonIconAndTextColorUseCase {
         return ChangeButtonIconAndTextColorUseCase()
     }
+
 }

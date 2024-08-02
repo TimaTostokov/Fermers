@@ -31,5 +31,4 @@ class AdvertHomeAdapter(private val items: List<AdvertModel>) : RecyclerView.Ada
 
     override fun getItemCount(): Int = items.size
 
-
 }

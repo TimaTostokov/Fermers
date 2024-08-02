@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
 import com.fermers_marketplace.fermers.R
 import com.fermers_marketplace.fermers.data.model.AdvertModel
 import com.fermers_marketplace.fermers.databinding.FragmentBuyBinding
@@ -52,6 +53,9 @@ class BuyFragment : Fragment() {
 
         val adapter = AdvertAdapter(items)
         binding.rvBuy.adapter = adapter
+        binding.rvBuy.layoutManager = GridLayoutManager(requireContext(), 2)
+        binding.rvBuy.adapter = adapter
+
     }
 
 }

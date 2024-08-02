@@ -33,11 +33,6 @@ class ChosenFragment : Fragment() {
                     else -> "Продаю"
                 }
             }.attach()
-
-            /*val layoutParams = upBtn.layoutParams as CoordinatorLayout.LayoutParams
-            layoutParams.behavior = HideBottomViewOnScrollBehavior<FloatingActionButton>()
-            upBtn.layoutParams = layoutParams*/
-
         }
     }
 
