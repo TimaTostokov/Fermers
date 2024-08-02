@@ -6,11 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.fermers_marketplace.fermers.databinding.FragmentHomeBinding
-import com.fermers_marketplace.fermers.presentation.fragments.chosen.adapter.ChosenViewPagerAdapter
+import com.fermers_marketplace.common.ScrollToTopListener
 import com.fermers_marketplace.fermers.presentation.fragments.home.adapter.HomeViewPagerAdapter
+import com.fermers_marketplace.fermers.utils.ext.Extension
 import com.google.android.material.tabs.TabLayoutMediator
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), ScrollToTopListener {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
@@ -34,6 +35,21 @@ class HomeFragment : Fragment() {
                     else -> "Подписка"
                 }
             }.attach()
+        }
+    }
+
+    override fun scrollToTop() {
+        val currentFragment = (binding.viewPagerHome.adapter as HomeViewPagerAdapter)
+            .getFragmentAt(binding.viewPagerHome.currentItem)
+
+        if (currentFragment is ScrollToTopListener) {
+            if (currentFragment.isAdded && currentFragment.view != null) {
+                currentFragment.scrollToTop()
+            } else {
+                Extension.showToast(requireContext(),"fvedfvd")
+            }
+        } else {
+            Extension.showToast(requireContext(),"Current fragment is not an instance of ScrollToTopListener.")
         }
     }
 

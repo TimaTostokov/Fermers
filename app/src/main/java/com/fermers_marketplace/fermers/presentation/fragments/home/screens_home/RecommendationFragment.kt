@@ -9,9 +9,10 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.fermers_marketplace.fermers.R
 import com.fermers_marketplace.fermers.data.model.AdvertModel
 import com.fermers_marketplace.fermers.databinding.FragmentRecommendationBinding
+import com.fermers_marketplace.common.ScrollToTopListener
 import com.fermers_marketplace.fermers.presentation.fragments.chosen.adapter.AdvertAdapter
 
-class RecommendationFragment : Fragment() {
+class RecommendationFragment : Fragment(), ScrollToTopListener {
 
     private var _binding: FragmentRecommendationBinding? = null
     private val binding get() = _binding!!
@@ -57,6 +58,10 @@ class RecommendationFragment : Fragment() {
         binding.rvBuyHome.layoutManager = GridLayoutManager(requireContext(), 2)
         binding.rvBuyHome.adapter = adapter
 
+    }
+
+    override fun scrollToTop() {
+        binding.rvBuyHome.smoothScrollToPosition(0)
     }
 
 }
