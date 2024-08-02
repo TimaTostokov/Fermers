@@ -37,7 +37,6 @@ class FollowersFragment : Fragment(), ScrollToTopListener {
         val adapter = AdvertHomeAdapter(items)
         binding.rvBuyHome.adapter = adapter
         binding.rvBuyHome.layoutManager = GridLayoutManager(requireContext(), 2)
-        binding.rvBuyHome.adapter = adapter
 
     }
 

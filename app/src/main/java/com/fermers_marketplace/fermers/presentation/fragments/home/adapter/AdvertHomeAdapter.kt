@@ -12,13 +12,13 @@ import com.fermers_marketplace.fermers.data.model.AdvertModel
 class AdvertHomeAdapter(private val items: List<AdvertModel>) : RecyclerView.Adapter<AdvertHomeAdapter.ItemViewHolder>() {
 
     class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val imageViewHome: ImageView = itemView.findViewById(R.id.iv_item_home)
-        val descriptionTextViewHome: TextView = itemView.findViewById(R.id.tv_description_home)
-        val priceTextViewHome: TextView = itemView.findViewById(R.id.tv_price_home)
+        val imageViewHome: ImageView = itemView.findViewById(R.id.iv_item)
+        val descriptionTextViewHome: TextView = itemView.findViewById(R.id.tv_description)
+        val priceTextViewHome: TextView = itemView.findViewById(R.id.tv_price)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_advert_home, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_advert_chosen, parent, false)
         return ItemViewHolder(view)
     }
 
