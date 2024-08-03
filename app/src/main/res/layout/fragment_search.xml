@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".presentation.fragments.home.search.SearchFragment">
+
+    <EditText
+        android:id="@+id/et_search"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/rounder_search"
+        android:drawableStart="@drawable/search_line_sc"
+        android:drawablePadding="8dp"
+        android:ems="10"
+        android:hint="Искать"
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        android:textColor="@color/blue_green"
+        android:textSize="16sp" />
+
+    <ImageView
+        android:id="@+id/delete_clear_btn"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_gravity="end"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="30dp"
+        android:padding="6dp"
+        android:src="@drawable/vector_exit"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/voice_recorder_btn"
+        android:layout_width="38dp"
+        android:layout_height="40dp"
+        android:layout_gravity="end"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="60dp"
+        android:cropToPadding="true"
+        android:padding="6dp"
+        android:src="@drawable/voice_recorder"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/vector_art"
+        android:layout_width="36dp"
+        android:layout_height="40dp"
+        android:layout_gravity="end"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="92dp"
+        android:cropToPadding="true"
+        android:padding="6dp"
+        android:src="@drawable/filter_alt"
+        tools:ignore="ContentDescription" />
+
+</FrameLayout>

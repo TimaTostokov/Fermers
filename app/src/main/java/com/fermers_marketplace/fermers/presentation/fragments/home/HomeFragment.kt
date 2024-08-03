@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.fermers_marketplace.fermers.databinding.FragmentHomeBinding
 import com.fermers_marketplace.common.ScrollToTopListener
 import com.fermers_marketplace.fermers.presentation.fragments.home.adapter.HomeViewPagerAdapter
@@ -27,6 +28,8 @@ class HomeFragment : Fragment(), ScrollToTopListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        goToSearch()
+
         binding.viewPagerHome.adapter = HomeViewPagerAdapter(this)
         binding.apply {
             TabLayoutMediator(tabLayoutHome, viewPagerHome) { tab, position ->
@@ -38,6 +41,12 @@ class HomeFragment : Fragment(), ScrollToTopListener {
         }
     }
 
+    private fun goToSearch() {
+        binding.etSearch.setOnClickListener {
+            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToSearchFragment())
+        }
+    }
+
     override fun scrollToTop() {
         val currentFragment = (binding.viewPagerHome.adapter as HomeViewPagerAdapter)
             .getFragmentAt(binding.viewPagerHome.currentItem)
@@ -46,7 +55,7 @@ class HomeFragment : Fragment(), ScrollToTopListener {
             if (currentFragment.isAdded && currentFragment.view != null) {
                 currentFragment.scrollToTop()
             } else {
-                Extension.showToast(requireContext(),"fvedfvd")
+                Extension.showToast(requireContext(),"Error: Fragment")
             }
         } else {
             Extension.showToast(requireContext(),"Current fragment is not an instance of ScrollToTopListener.")

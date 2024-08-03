@@ -5,9 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.fermers_marketplace.fermers.R
 import com.fermers_marketplace.fermers.databinding.FragmentCatalogBinding
 
-class CatalogFragment : Fragment() {
+class CatalogFragment : Fragment(R.layout.fragment_catalog) {
 
     private var _binding: FragmentCatalogBinding? = null
     private val binding get() = _binding!!

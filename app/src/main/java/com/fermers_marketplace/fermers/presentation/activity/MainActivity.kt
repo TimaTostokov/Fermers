@@ -48,10 +48,10 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_container) as NavHostFragment
         navController = navHostFragment.navController
 
-        val fragmentsWithoutBottomNav = setOf(R.id.splashFragment, R.id.viewPagerFragment)
+        val fragmentsWithBottomNav = setOf(R.id.homeFragment, R.id.catalogFragment, R.id.chosenFragment, R.id.profileFragment)
         navController.addOnDestinationChangedListener { _, destination, _ ->
             with(binding) {
-                val isBottomNavVisible = !fragmentsWithoutBottomNav.contains(destination.id)
+                val isBottomNavVisible = fragmentsWithBottomNav.contains(destination.id)
                 bottomAppBar.isVisible = isBottomNavVisible
                 fab.isVisible = isBottomNavVisible
                 upBtn.isVisible = isBottomNavVisible
@@ -99,4 +99,5 @@ class MainActivity : AppCompatActivity() {
         navController.removeOnDestinationChangedListener { _, _, _ -> }
         super.onDestroy()
     }
+
 }

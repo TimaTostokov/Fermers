@@ -29,9 +29,9 @@ class FollowersFragment : Fragment(), ScrollToTopListener {
         super.onViewCreated(view, savedInstanceState)
 
         val items = listOf(
-            AdvertModel(R.drawable.pattern_image, "Жыкы Байке не нахуй", "Цена 120 cом"),
+            AdvertModel(R.drawable.pattern_image, "Жыкы Байке продает корову", "Цена 120 cом"),
             AdvertModel(R.drawable.onboard_one, "Рамис продаю ноутбук", "Цена 200 сом"),
-            AdvertModel(R.drawable.onboard_three, "Продаю там", "Цена 300 сом")
+            AdvertModel(R.drawable.onboard_three, "Продаю там сям и я богат", "Цена 300 сом")
         )
 
         val adapter = AdvertHomeAdapter(items)
