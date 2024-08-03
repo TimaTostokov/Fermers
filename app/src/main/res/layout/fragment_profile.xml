@@ -1,16 +1,211 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     tools:context=".presentation.fragments.profile.ProfileFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Профиль"
-        android:textSize="24sp"
-        android:textColor="@color/black"/>
+        android:orientation="horizontal">
 
-</FrameLayout>
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/avatarImageView"
+            android:layout_width="84dp"
+            android:layout_height="84dp"
+            android:layout_margin="18dp"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher"
+            tools:ignore="MissingClass" />
+
+        <TextView
+            android:id="@+id/user_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            android:text="User Name"
+            android:textSize="18sp"
+            android:textColor="@color/black"/>
+
+        <ImageView
+            android:id="@+id/edit_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="4dp"
+            android:src="@drawable/create"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|end"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="48dp"
+            android:src="@drawable/nightlight_round"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|end"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="12dp"
+            android:src="@drawable/settings"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/profile_background"
+            android:paddingHorizontal="14dp"
+            android:paddingVertical="4dp"
+            android:text="Объявления: 12"
+            android:textSize="14sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/profile_background"
+            android:paddingHorizontal="14dp"
+            android:paddingVertical="4dp"
+            android:text="Подписки: 31"
+            android:textSize="14sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/profile_background"
+            android:paddingHorizontal="14dp"
+            android:paddingVertical="4dp"
+            android:text="Подписчики: 8"
+            android:textSize="14sp"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/wallet_btn"
+            style="@style/card_view_menu"
+            android:layout_marginTop="18dp"
+            android:outlineSpotShadowColor="@color/gray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="UnusedAttribute">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="16dp"
+                android:text="Кошелёк"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/hel_btn"
+            style="@style/card_view_menu"
+
+            android:outlineSpotShadowColor="@color/gray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="UnusedAttribute">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="16dp"
+                android:text="Бухгалтерский учёт"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/help_btn"
+            style="@style/card_view_menu"
+
+            android:outlineSpotShadowColor="@color/gray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="UnusedAttribute">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="16dp"
+                android:text="Поддержка"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/share_btn"
+            style="@style/card_view_menu"
+            android:outlineSpotShadowColor="@color/gray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="UnusedAttribute">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="16dp"
+                android:text="Поделиться"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/about_the_app_btn"
+            style="@style/card_view_menu"
+            android:outlineSpotShadowColor="@color/gray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="UnusedAttribute">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="16dp"
+                android:text="О приложении"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</LinearLayout>
