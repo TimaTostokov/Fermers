@@ -1,16 +1,273 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".presentation.fragments.catalog.CatalogFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Каталог"
-        android:textSize="24sp"
-        android:textColor="@color/black"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/tv_catalog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="28dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Каталог"
+            android:textColor="@color/blue_green"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="@id/img_slider"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_message"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginEnd="16dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="4dp"
+            android:src="@drawable/icon_message"
+            app:layout_constraintBottom_toBottomOf="@id/tv_catalog"
+            app:layout_constraintEnd_toEndOf="@id/img_slider"
+            app:layout_constraintTop_toTopOf="@id/tv_catalog" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/img_slider"
+            android:layout_width="match_parent"
+            android:layout_height="198dp"
+            android:layout_margin="16dp"
+            android:background="@drawable/bg_card"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_message" />
+
+        <ImageButton
+            android:id="@+id/btn_slide_right"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/ic_btn_slide"
+            android:elevation="10dp"
+            app:layout_constraintBottom_toBottomOf="@id/img_slider"
+            app:layout_constraintEnd_toEndOf="@id/img_slider"
+            app:layout_constraintTop_toTopOf="@id/img_slider" />
+
+        <ImageButton
+            android:id="@+id/btn_slide_left"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/ic_btn_slide"
+            android:elevation="10dp"
+            android:rotation="180"
+            app:layout_constraintBottom_toBottomOf="@id/img_slider"
+            app:layout_constraintStart_toStartOf="@id/img_slider"
+            app:layout_constraintTop_toTopOf="@id/img_slider" />
+
+        <me.relex.circleindicator.CircleIndicator
+            android:id="@+id/slideDotLL"
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            android:layout_margin="16dp"
+            app:ci_drawable="@drawable/tab_indicator"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/img_slider"
+            tools:ignore="MissingClass" />
+
+        <TextView
+            android:id="@+id/tv_services"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Категории"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@id/img_slider"
+            app:layout_constraintTop_toBottomOf="@id/slideDotLL" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            app:layout_constraintEnd_toEndOf="@id/img_slider"
+            app:layout_constraintStart_toStartOf="@id/img_slider"
+            app:layout_constraintTop_toBottomOf="@id/tv_services">
+
+            <LinearLayout
+                android:id="@+id/remodel_cleaning_up_container"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/bg_card"
+                android:elevation="8dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@id/wet_cleaning_container"
+                app:layout_constraintEnd_toStartOf="@id/deep_cleaning_container"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/top_radius"
+                    android:backgroundTint="@color/colorYellow">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginVertical="20dp"
+                        android:background="@drawable/onboard_one" />
+
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/tv_cleaning_after"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="4dp"
+                    android:layout_marginVertical="8dp"
+                    android:background="@color/light_gray"
+                    android:text="Скот"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/deep_cleaning_container"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/bg_card"
+                android:elevation="19dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@id/remodel_cleaning_up_container"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/remodel_cleaning_up_container"
+                app:layout_constraintTop_toTopOf="@id/remodel_cleaning_up_container">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/top_radius"
+                    android:backgroundTint="@color/colorOrange">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginVertical="20dp"
+                        android:background="@drawable/fructsfermer" />
+
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/tv_deep_cleaning"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="8dp"
+                    android:layout_marginStart="4dp"
+                    android:background="@color/light_gray"
+                    android:layout_marginEnd="20dp"
+                    android:text="Овощи|Фрукты"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/wet_cleaning_container"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/bg_card"
+                android:elevation="19dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@id/extra_cleaning_container"
+                app:layout_constraintEnd_toEndOf="@id/remodel_cleaning_up_container"
+                app:layout_constraintStart_toStartOf="@id/remodel_cleaning_up_container"
+                app:layout_constraintTop_toBottomOf="@id/remodel_cleaning_up_container"
+                app:layout_constraintTop_toTopOf="@id/extra_cleaning_container">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/top_radius"
+                    android:backgroundTint="@color/light_gray">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginVertical="20dp"
+                        android:background="@drawable/forfermer" />
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/tv_wet_cleaning"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="8dp"
+                    android:layout_marginStart="4dp"
+                    android:background="@color/light_gray"
+                    android:layout_marginEnd="20dp"
+                    android:text="Просроченные"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/extra_cleaning_container"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/bg_card"
+                android:elevation="19dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="@id/deep_cleaning_container"
+                app:layout_constraintStart_toStartOf="@id/deep_cleaning_container"
+                app:layout_constraintTop_toBottomOf="@id/deep_cleaning_container"
+                app:layout_constraintTop_toTopOf="@id/wet_cleaning_container">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/top_radius"
+                    android:backgroundTint="@color/blue_green">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginVertical="20dp"
+                        android:background="@drawable/background_onboarding_third" />
+
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/tv_extra_cleaning"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="8dp"
+                    android:layout_marginStart="4dp"
+                    android:text="Саженцы"
+                    android:background="@color/light_gray"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

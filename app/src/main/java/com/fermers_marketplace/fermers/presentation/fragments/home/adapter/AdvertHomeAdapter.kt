@@ -6,10 +6,12 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.aghajari.zoomhelper.ZoomHelper
 import com.fermers_marketplace.fermers.R
 import com.fermers_marketplace.fermers.data.model.AdvertModel
 
-class AdvertHomeAdapter(private val items: List<AdvertModel>) : RecyclerView.Adapter<AdvertHomeAdapter.ItemViewHolder>() {
+class AdvertHomeAdapter(private val items: List<AdvertModel>) :
+    RecyclerView.Adapter<AdvertHomeAdapter.ItemViewHolder>() {
 
     class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val imageViewHome: ImageView = itemView.findViewById(R.id.iv_item)
@@ -18,7 +20,8 @@ class AdvertHomeAdapter(private val items: List<AdvertModel>) : RecyclerView.Ada
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_advert_chosen, parent, false)
+        val view =
+            LayoutInflater.from(parent.context).inflate(R.layout.item_advert_chosen, parent, false)
         return ItemViewHolder(view)
     }
 
@@ -27,6 +30,8 @@ class AdvertHomeAdapter(private val items: List<AdvertModel>) : RecyclerView.Ada
         holder.imageViewHome.setImageResource(item.imageResource)
         holder.descriptionTextViewHome.text = item.description
         holder.priceTextViewHome.text = item.price
+
+        ZoomHelper.addZoomableView(holder.imageViewHome)
     }
 
     override fun getItemCount(): Int = items.size

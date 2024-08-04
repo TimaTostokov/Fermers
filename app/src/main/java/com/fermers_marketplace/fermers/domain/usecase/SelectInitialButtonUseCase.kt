@@ -15,4 +15,5 @@ class SelectInitialButtonUseCase {
         viewModel.updateSelectedButtonState(layout, config)
         viewModel.changeButtonIconAndTextColor(context, config.buttonId, config.textId, config.newIconResId)
     }
+
 }

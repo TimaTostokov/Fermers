@@ -34,4 +34,5 @@ class ProfileViewModel @Inject constructor(
         _profileImageUri.value = uri
         sharedPreferences.saveImage(uri.toString())
     }
+
 }

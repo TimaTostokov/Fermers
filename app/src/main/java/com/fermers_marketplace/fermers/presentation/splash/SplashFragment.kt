@@ -26,7 +26,7 @@ class SplashFragment : Fragment(R.layout.fragment_splash) {
             } else {
                 findNavController().navigate(SplashFragmentDirections.actionSplashFragmentToViewPagerFragment())
             }
-        }, 3_000L)
+        }, 2500)
 
         val animTop =
             android.view.animation.AnimationUtils.loadAnimation(view.context, R.anim.from_top)

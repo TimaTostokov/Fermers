@@ -44,6 +44,7 @@ android {
 
 dependencies {
 
+    implementation(libs.androidx.swiperefreshlayout)
     kapt(libs.hilt.android.compiler)
     implementation(libs.hilt.android)
     implementation(libs.hilt.navigation)
@@ -90,5 +91,12 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    implementation ("com.github.bumptech.glide:glide:4.16.0")
+    implementation (libs.glide)
+
+    implementation(libs.circelImage)
+
+    implementation(libs.circelIndicator)
+
+    implementation(libs.zoomage)
+    implementation(libs.zoomhelper)
 }

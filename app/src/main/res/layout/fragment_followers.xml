@@ -11,6 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/item_advert_home" />
+        tools:listitem="@layout/item_advert_chosen" />
 
 </LinearLayout>
