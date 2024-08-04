@@ -127,7 +127,6 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/hel_btn"
             style="@style/card_view_menu"
-
             android:outlineSpotShadowColor="@color/gray"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -148,7 +147,6 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/help_btn"
             style="@style/card_view_menu"
-
             android:outlineSpotShadowColor="@color/gray"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"

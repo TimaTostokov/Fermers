@@ -5,6 +5,7 @@ import com.fermers_marketplace.fermers.presentation.activity.viewmodel.MainViewM
 import javax.inject.Inject
 
 class ChangeButtonIconAndTextColorUseCase @Inject constructor() {
+
     fun execute(
         context: Context,
         buttonId: Int,

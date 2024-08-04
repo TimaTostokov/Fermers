@@ -46,7 +46,7 @@ class ChosenFragment : Fragment(), ScrollToTopListener {
             if (currentFragment.isAdded && currentFragment.view != null) {
                 currentFragment.scrollToTop()
             } else {
-                Extension.showToast(requireContext(),"fvedfvd")
+                Extension.showToast(requireContext(),"Error: Fragment")
             }
         } else {
             Extension.showToast(requireContext(),"Current fragment is not an instance of ScrollToTopListener.")

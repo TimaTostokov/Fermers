@@ -38,6 +38,7 @@
                 android:textColor="@color/dark_white"
                 android:textSize="78sp"
                 android:textStyle="bold" />
+
         </LinearLayout>
 
         <TextView

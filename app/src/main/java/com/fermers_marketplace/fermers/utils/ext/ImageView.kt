@@ -15,15 +15,15 @@ fun ImageView.loadImage(url: String, context: Context) {
         { response ->
             this.setImageBitmap(response)
         },
-        0, // Image width
-        0, // Image height
+        0,
+        0,
         ImageView.ScaleType.CENTER_CROP,
         null,
-        { error ->
-            // Handle error
+        { _ ->
             this.setImageResource(R.mipmap.ic_launcher)
         }
     )
 
     requestQueue.add(imageRequest)
+
 }

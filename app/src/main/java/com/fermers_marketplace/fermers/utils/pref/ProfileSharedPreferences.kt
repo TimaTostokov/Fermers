@@ -28,4 +28,5 @@ class ProfileSharedPreferences(
     fun getImage(): String?{
         return sharedPreferences.getString("USER_AVATAR", "USER")
     }
+
 }

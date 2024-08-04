@@ -5,7 +5,9 @@ import com.fermers_marketplace.fermers.presentation.activity.viewmodel.MainViewM
 import javax.inject.Inject
 
 class ResetLastSelectedButtonUseCase @Inject constructor() {
+
     fun execute(context: Context, viewModel: MainViewModel) {
         viewModel.resetLastSelectedButtonState(context)
     }
+
 }

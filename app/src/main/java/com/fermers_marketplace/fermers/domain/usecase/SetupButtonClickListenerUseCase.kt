@@ -19,4 +19,5 @@ class SetupButtonClickListenerUseCase {
         viewModel.changeButtonIconAndTextColor(context, config.buttonId, config.textId, config.newIconResId)
         navController.navigate(config.fragmentId)
     }
+
 }
