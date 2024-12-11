@@ -6,7 +6,7 @@
     android:background="@drawable/onboard_one"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".presentation.onboarding.screens.FirstScreenFragment">
+    tools:context=".presentation.fragments.onboarding.screens.FirstScreenFragment">
 
     <TextView
         android:id="@+id/welcome"

@@ -6,7 +6,7 @@
     android:background="@color/white_green"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".presentation.splash.SplashFragment">
+    tools:context=".presentation.fragments.splash.SplashFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -63,7 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="26dp"
             android:letterSpacing="0.1"
-            android:text="@string/accelerate_prosperity_company"
+            android:text="AGRO MARKET"
             android:textColor="@color/dark_white"
             android:textSize="14sp"
             android:textStyle="bold" />

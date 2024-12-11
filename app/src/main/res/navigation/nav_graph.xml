@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.fermers_marketplace.fermers.presentation.splash.SplashFragment"
+        android:name="com.fermers_marketplace.fermers.presentation.fragments.splash.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash">
 
@@ -28,7 +28,7 @@
 
     <fragment
         android:id="@+id/viewPagerFragment"
-        android:name="com.fermers_marketplace.fermers.presentation.onboarding.ViewPagerFragment"
+        android:name="com.fermers_marketplace.fermers.presentation.fragments.onboarding.ViewPagerFragment"
         android:label="fragment_view_pager"
         tools:layout="@layout/fragment_view_pager">
 
@@ -74,19 +74,19 @@
 
     <fragment
         android:id="@+id/firstScreenFragment"
-        android:name="com.fermers_marketplace.fermers.presentation.onboarding.screens.FirstScreenFragment"
+        android:name="com.fermers_marketplace.fermers.presentation.fragments.onboarding.screens.FirstScreenFragment"
         android:label="fragment_first_screen"
         tools:layout="@layout/fragment_first_screen" />
 
     <fragment
         android:id="@+id/secondScreenFragment"
-        android:name="com.fermers_marketplace.fermers.presentation.onboarding.screens.SecondScreenFragment"
+        android:name="com.fermers_marketplace.fermers.presentation.fragments.onboarding.screens.SecondScreenFragment"
         android:label="fragment_second_screen"
         tools:layout="@layout/fragment_second_screen" />
 
     <fragment
         android:id="@+id/thirdScreenFragment"
-        android:name="com.fermers_marketplace.fermers.presentation.onboarding.screens.ThirdScreenFragment"
+        android:name="com.fermers_marketplace.fermers.presentation.fragments.onboarding.screens.ThirdScreenFragment"
         android:label="fragment_third_screen"
         tools:layout="@layout/fragment_third_screen" />
 

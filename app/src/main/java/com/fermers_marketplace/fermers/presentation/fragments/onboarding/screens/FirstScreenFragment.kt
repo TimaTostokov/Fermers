@@ -1,4 +1,4 @@
-package com.fermers_marketplace.fermers.presentation.onboarding.screens
+package com.fermers_marketplace.fermers.presentation.fragments.onboarding.screens
 
 import android.os.Bundle
 import android.view.LayoutInflater

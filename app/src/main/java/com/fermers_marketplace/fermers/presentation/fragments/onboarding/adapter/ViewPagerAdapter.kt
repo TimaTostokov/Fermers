@@ -1,4 +1,4 @@
-package com.fermers_marketplace.fermers.presentation.onboarding.adapter
+package com.fermers_marketplace.fermers.presentation.fragments.onboarding.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager

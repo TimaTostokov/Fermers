@@ -1,4 +1,4 @@
-package com.fermers_marketplace.fermers.presentation.splash
+package com.fermers_marketplace.fermers.presentation.fragments.splash
 
 import android.content.Context
 import android.os.Bundle
@@ -45,8 +45,8 @@ class SplashFragment : Fragment(R.layout.fragment_splash) {
         }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onDestroyView() {
+        super.onDestroyView()
         activity?.window?.let { window ->
             window.navigationBarColor =
                 ContextCompat.getColor(requireContext(), R.color.white_green)

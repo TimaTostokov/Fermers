@@ -9,7 +9,7 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.view.isVisible
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import com.fermers_marketplace.common.ScrollToTopListener
+import com.fermers_marketplace.fermers.common.ScrollToTopListener
 import com.fermers_marketplace.fermers.R
 import com.fermers_marketplace.fermers.data.model.ButtonConfig
 import com.fermers_marketplace.fermers.databinding.ActivityMainBinding

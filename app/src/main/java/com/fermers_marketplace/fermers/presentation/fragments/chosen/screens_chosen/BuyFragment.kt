@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.fermers_marketplace.fermers.R
 import com.fermers_marketplace.fermers.data.model.AdvertModel
 import com.fermers_marketplace.fermers.databinding.FragmentBuyBinding
-import com.fermers_marketplace.common.ScrollToTopListener
+import com.fermers_marketplace.fermers.common.ScrollToTopListener
 import com.fermers_marketplace.fermers.presentation.fragments.chosen.adapter.AdvertAdapter
 
 class BuyFragment : Fragment(), ScrollToTopListener {

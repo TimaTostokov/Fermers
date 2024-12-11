@@ -1,4 +1,4 @@
-package com.fermers_marketplace.fermers.app
+package com.fermers_marketplace.fermers
 
 import android.app.Application
 import com.fermers_marketplace.fermers.utils.pref.ProfileSharedPreferences

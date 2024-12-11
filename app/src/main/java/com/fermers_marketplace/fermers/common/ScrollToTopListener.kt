@@ -1,4 +1,4 @@
-package com.fermers_marketplace.common
+package com.fermers_marketplace.fermers.common
 
 interface ScrollToTopListener {
     fun scrollToTop()

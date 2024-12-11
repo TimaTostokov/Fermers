@@ -6,7 +6,7 @@
     android:background="@drawable/onboard_three"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".presentation.onboarding.screens.SecondScreenFragment">
+    tools:context=".presentation.fragments.onboarding.screens.SecondScreenFragment">
 
     <TextView
         android:id="@+id/textView"

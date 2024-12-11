@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.fermers_marketplace.fermers.databinding.FragmentChosenBinding
-import com.fermers_marketplace.common.ScrollToTopListener
+import com.fermers_marketplace.fermers.common.ScrollToTopListener
 import com.fermers_marketplace.fermers.presentation.fragments.chosen.adapter.ChosenViewPagerAdapter
 import com.fermers_marketplace.fermers.utils.ext.Extension
 import com.google.android.material.tabs.TabLayoutMediator
